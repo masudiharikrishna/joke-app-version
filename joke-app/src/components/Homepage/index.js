@@ -39,7 +39,9 @@ const Homepage = () => {
     <div className="homepage-container">
       <div>
         {loading ? (
-          <TailSpin color="#00BFFF" height={50} width={50} />
+          <div className='loading-container'>
+            <TailSpin color="#00BFFF" height={100} width={100} />
+          </div>
         ) : (
           <table>
             <thead>
@@ -57,7 +59,7 @@ const Homepage = () => {
           </table>
         )}
       </div>
-      <div>
+      <div className='button-container'>
         <button className="btn btn-primary" onClick={handleFetchJokes} disabled={loading}>
           Fetch Jokes
         </button>

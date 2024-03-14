@@ -1,7 +1,7 @@
 // src/components/Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';  // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 const Login = () => {
@@ -11,22 +11,26 @@ const Login = () => {
   const navigate = useNavigate();
 
   const validateLogin = () => {
-    // Add your validation logic here
-    if (username === 'dummy' && password === 'dummy') {
-      // Successful login, navigate to the homepage
+    if (username === 'krishna' && password === 'krishna123') {
       navigate('/homepage');
     } else {
-      // Display error message
       setErrorMessage('Invalid credentials. Please try again.');
     }
   };
 
   return (
-    <div className="login-container">
+    <div className='main-container'>
+      <div className='login-container-details'>
+        <h3>Login Details</h3>
+        <hr/>
+        <p>username: krishna</p>
+        <p>password: krishna123</p>
+      </div>
       <h1>Login</h1>
+      <div className="login-container">
       <form>
         <div className="mb-3">
-          <label htmlFor="username" className="form-label">Username:</label>
+          <label htmlFor="username" className="form-label">USERNAME</label>
           <input
             type="text"
             className="form-control"
@@ -38,7 +42,7 @@ const Login = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="password" className="form-label">Password:</label>
+          <label htmlFor="password" className="form-label">PASSWORD</label>
           <input
             type="password"
             className="form-control"
@@ -49,11 +53,12 @@ const Login = () => {
             required
           />
         </div>
-        <button type="button" className="btn btn-primary" onClick={validateLogin}>
+        <button type="submit" className="btn btn-primary" onClick={validateLogin}>
           Login
         </button>
       </form>
       <p id="error-message" className="text-danger">{errorMessage}</p>
+      </div>
     </div>
   );
 };
